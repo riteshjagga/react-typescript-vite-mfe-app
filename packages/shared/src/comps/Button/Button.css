@@ -1,0 +1,18 @@
+.btn {
+  border-radius: 0.25rem;
+}
+
+.btn.primary {
+  background-color: green;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: antiquewhite;
+  color: black;
+}
+
+.btn.tertiary {
+  background-color: white;
+  color: black;
+}

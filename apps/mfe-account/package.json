@@ -1,0 +1,32 @@
+{
+  "name": "@workspace/mfe-account",
+  "version": "1.0.0",
+  "description": "A frontend template project which uses React, TypeScript, Vite, TailwindCSS, Jest, and RTL",
+  "main": "src/AppRoutes.tsx",
+  "exports": {
+    ".": "./src/AppRoutes.tsx"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "jest"
+  },
+  "author": "Ritesh Jagga",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.9.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^5.1.1",
+    "tailwindcss": "^4.1.17",
+    "vite": "^7.2.4",
+    "vite-plugin-checker": "^0.11.0"
+  }
+}
