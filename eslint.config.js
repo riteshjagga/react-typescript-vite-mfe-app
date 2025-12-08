@@ -6,9 +6,22 @@ import a11y from 'eslint-plugin-jsx-a11y'
 import importPlugin from 'eslint-plugin-import'
 
 export default [
+  // Global ignores MUST be in a separate config object
+  // So that directories can be ignored consistently wherever this configuration is extended from
+  {
+    ignores: [
+      '**/dist/**',
+      '**/build/**',
+      '**/node_modules/**',
+      '**/.vite/**',
+      '**/coverage/**',
+      '**/*.config.js',
+      '**/*.config.ts',
+    ],
+  },
+  // Main config
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
-    ignores: ['dist', 'build', 'node_modules', '**/*.config.js'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {

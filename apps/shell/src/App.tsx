@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-import { ThemeProvider } from '@workspace/shared/components/ThemeProvider'
 import MfeAccount from '@workspace/mfe-account'
+import { ThemeProvider } from '@workspace/shared/components/ThemeProvider'
 import { Account } from './modules/Account/Account'
 import NavBar from './components/NavBar/NavBar'
 import Dashboard from './modules/Dashboard/Dashboard'
