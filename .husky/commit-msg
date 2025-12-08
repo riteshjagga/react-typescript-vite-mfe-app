@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+commit_msg_file=$1
+commit_msg=$(cat "$commit_msg_file")
+
+# Check for either TASK number OR SETUP prefix
+if ! echo "$commit_msg" | grep -qE '^(TASK [0-9]+:|SETUP:)'; then
+    echo "❌ Commit message must start with either:"
+    echo "   - TASK <number>: <description>"
+    echo "   - SETUP: <description>"
+    echo ""
+    echo "   Examples:"
+    echo "   - TASK 728: Fixed login validation issue"
+    echo "   - SETUP: Added ESLint and Prettier configuration"
+    echo ""
+    echo "   Your message: $commit_msg"
+    exit 1
+fi
+
+# Check minimum length
+if [ ${#commit_msg} -lt 20 ]; then
+    echo "❌ Commit message is too short (minimum 20 characters)"
+    exit 1
+fi
+
+echo "✅ Commit message validated"
