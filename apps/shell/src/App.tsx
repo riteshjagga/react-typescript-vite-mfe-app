@@ -10,6 +10,8 @@ import Settings from './modules/Settings/Settings'
 import '@workspace/shared/global.css'
 import './App.css'
 
+console.log(import.meta.env.VITE_ENV_NAME)
+
 const App = (): React.ReactElement => {
   return (
     <ThemeProvider>
