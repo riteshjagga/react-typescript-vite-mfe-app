@@ -3,6 +3,7 @@
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/preflight.css' layer(base);
 @import 'tailwindcss/utilities.css' layer(utilities);
+@import './fonts.css';
 
 @source "../../../apps/**/*.{ts,tsx}";
 @source "../../../components/**/*.{ts,tsx}";
@@ -48,75 +49,213 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-magenta-t50: rgba(255, 236, 249, 1);
+  --color-magenta-t40: rgba(255, 217, 244, 1);
+  --color-magenta-t30: rgba(255, 179, 232, 1);
+  --color-magenta-t20: rgba(254, 140, 221, 1);
+  --color-magenta-t10: rgba(254, 102, 209, 1);
+  --color-magenta-base: rgba(254, 64, 197, 1);
+  --color-magenta-s10: rgba(216, 19, 158, 1);
+  --color-magenta-s20: rgba(173, 13, 126, 1);
+  --color-magenta-s30: rgba(126, 19, 95, 1);
+  --color-magenta-s40: rgba(70, 30, 58, 1);
+  --color-magenta-s50: rgba(55, 27, 46, 1);
+
+  --color-pink-50: rgba(254, 237, 242, 1);
+  --color-pink-100: rgba(253, 220, 229, 1);
+  --color-pink-200: rgba(251, 184, 203, 1);
+  --color-pink-300: rgba(250, 149, 178, 1);
+  --color-pink-400: rgba(248, 113, 152, 1);
+  --color-pink-500: rgba(246, 78, 126, 1);
+  --color-pink-600: rgba(215, 66, 109, 1);
+  --color-pink-700: rgba(148, 47, 76, 1);
+  --color-pink-800: rgba(98, 31, 50, 1);
+  --color-pink-900: rgba(71, 31, 42, 1);
+  --color-pink-950: rgba(55, 27, 34, 1);
+
+  --color-purple-50: rgba(247, 241, 255, 1);
+  --color-purple-100: rgba(238, 228, 255, 1);
+  --color-purple-200: rgba(221, 200, 254, 1);
+  --color-purple-300: rgba(204, 173, 254, 1);
+  --color-purple-400: rgba(187, 145, 253, 1);
+  --color-purple-500: rgba(170, 118, 253, 1);
+  --color-purple-600: rgba(137, 82, 225, 1);
+  --color-purple-700: rgba(102, 71, 152, 1);
+  --color-purple-800: rgba(70, 49, 104, 1);
+  --color-purple-900: rgba(57, 38, 89, 1);
+  --color-purple-950: rgba(38, 29, 53, 1);
+
+  --color-indigo-50: rgba(238, 240, 253, 1);
+  --color-indigo-100: rgba(220, 225, 250, 1);
+  --color-indigo-200: rgba(189, 200, 245, 1);
+  --color-indigo-300: rgba(167, 181, 242, 1);
+  --color-indigo-400: rgba(140, 160, 242, 1);
+  --color-indigo-500: rgba(102, 132, 255, 1);
+  --color-indigo-600: rgba(60, 96, 246, 1);
+  --color-indigo-700: rgba(26, 65, 230, 1);
+  --color-indigo-800: rgba(36, 47, 168, 1);
+  --color-indigo-900: rgba(32, 44, 96, 1);
+  --color-indigo-950: rgba(27, 32, 55, 1);
+
+  --color-blue-50: rgba(238, 243, 255, 1);
+  --color-blue-100: rgba(221, 231, 255, 1);
+  --color-blue-200: rgba(187, 206, 255, 1);
+  --color-blue-300: rgba(154, 182, 255, 1);
+  --color-blue-400: rgba(120, 158, 255, 1);
+  --color-blue-500: rgba(86, 133, 255, 1);
+  --color-blue-600: rgba(69, 107, 204, 1);
+  --color-blue-700: rgba(54, 82, 155, 1);
+  --color-blue-800: rgba(41, 63, 121, 1);
+  --color-blue-900: rgba(31, 43, 71, 1);
+  --color-blue-950: rgba(26, 34, 54, 1);
+
+  --color-cyan-50: rgba(214, 251, 251, 1);
+  --color-cyan-100: rgba(183, 247, 247, 1);
+  --color-cyan-200: rgba(146, 242, 242, 1);
+  --color-cyan-300: rgba(110, 238, 238, 1);
+  --color-cyan-400: rgba(74, 234, 234, 1);
+  --color-cyan-500: rgba(14, 221, 221, 1);
+  --color-cyan-600: rgba(16, 188, 188, 1);
+  --color-cyan-700: rgba(19, 134, 134, 1);
+  --color-cyan-800: rgba(30, 94, 94, 1);
+  --color-cyan-900: rgba(33, 69, 69, 1);
+  --color-cyan-950: rgba(31, 46, 46, 1);
+
+  --color-fuchsia-50: var(--color-magenta-t50);
+  --color-fuchsia-100: var(--color-magenta-t40);
+  --color-fuchsia-200: var(--color-magenta-t30);
+  --color-fuchsia-300: var(--color-magenta-t20);
+  --color-fuchsia-400: var(--color-magenta-t10);
+  --color-fuchsia-500: var(--color-magenta-base);
+  --color-fuchsia-600: var(--color-magenta-s10);
+  --color-fuchsia-700: var(--color-magenta-s20);
+  --color-fuchsia-800: var(--color-magenta-s30);
+  --color-fuchsia-900: var(--color-magenta-s40);
+  --color-fuchsia-950: var(--color-magenta-s50);
+
+  /**
+   * I think, these colors can be set to corresponding variables defined in :root and .dark and 
+   * then be removed from here.
+   * Colors for chart 1-5 and for light and dark colors have been directly refered in :root and .dark and commented here.
+   *
+   * For now, variables around brand background and foreground colors and for light and dark are being kept
+   * We'll see if these variables are required or not and then can be commented/removed if not required.
+   */
+  --color-brand-background-light: var(--color-magenta-s10);
+  --color-brand-background-dark: var(--color-magenta-t20);
+  --color-brand-background-light-2: var(--color-magenta-s20);
+  --color-brand-background-dark-2: var(--color-magenta-t30);
+  --color-brand-foreground-light: var(--color-magenta-s10);
+  --color-brand-foreground-dark: var(--color-magenta-t20);
+  /* --color-chart-1-light: var(--color-magenta-t10);
+  --color-chart-1-dark: var(--color-magenta-s10);
+  --color-chart-2-light: var(--color-blue-600);
+  --color-chart-2-dark: var(--color-blue-700);
+  --color-chart-3-light: var(--color-purple-400);
+  --color-chart-3-dark: var(--color-purple-600);
+  --color-chart-4-light: var(--color-magenta-t30);
+  --color-chart-4-dark: var(--color-magenta-t10);
+  --color-chart-5-light: var(--color-cyan-200);
+  --color-chart-5-dark: var(--color-cyan-400); */
+
+  --font-sans: 'Source Sans Pro', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-brand: 'Mazzard H', 'Source Sans Pro', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --shadow-brand-strong: 0 4px 6px -4px rgba(0, 0, 0, 0.05), 0 -4px 8px 0 #ffecf9,
+    0 4px 8px 0 rgba(214, 250, 250, 0.7), 0 0 8px 0 #eee4ff;
+
+  --shadow-brand-subtle: 0 2px 8px -4px rgba(0, 0, 0, 0.03), 0 -2px 8px 1px rgba(255, 236, 249, 0.8),
+    0 2px 8px 1px rgba(214, 250, 250, 0.6), 0 0 8px 1px rgba(238, 228, 255, 0.8);
 }
 
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
+  --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.145 0 0);
+  /* --primary: oklch(0.205 0 0); */
+  --primary: var(--color-neutral-900);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(16.282% 0.04132 280.797);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.705 0.015 286.067);
-  --chart-1: oklch(0.646 0.222 41.116);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  /* --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --chart-5: oklch(0.769 0.188 70.08); */
+  --chart-1: var(--color-magenta-t10);
+  --chart-2: var(--color-blue-600);
+  --chart-3: var(--color-purple-400);
+  --chart-4: var(--color-magenta-t30);
+  --chart-5: var(--color-cyan-200);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.705 0.015 286.067);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --brand: var(--color-brand-background-light);
+  --brand-background-2: var(--color-brand-background-light-2);
+  --brand-foreground: var(--color-brand-foreground-light);
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
+  --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
+  --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
+  --popover: oklch(0.269 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
+  /* --primary: oklch(0.922 0 0); */
+  --primary: var(--color-neutral-50);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.371 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.552 0.016 285.938);
-  --chart-1: oklch(0.488 0.243 264.376);
+  --ring: oklch(0.556 0 0);
+  /* --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
+  --chart-5: oklch(0.645 0.246 16.439); */
+  --chart-1: var(--color-magenta-s10);
+  --chart-2: var(--color-blue-700);
+  --chart-3: var(--color-purple-600);
+  --chart-4: var(--color-magenta-t10);
+  --chart-5: var(--color-cyan-400);
+  --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.552 0.016 285.938);
+  --sidebar-ring: oklch(0.439 0 0);
+  --brand: var(--color-brand-background-dark);
+  --brand-background-2: var(--color-brand-background-dark-2);
+  --brand-foreground: var(--color-brand-foreground-dark);
 }
 
 @layer base {
@@ -125,5 +264,35 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .heading-xl {
+    /* Mobile */
+    @apply font-brand font-bold tracking-normal text-3xl leading-normal;
+    /* Desktop */
+    @apply md:text-5xl md:leading-normal;
+  }
+
+  .heading-lg {
+    /* Mobile */
+    @apply font-brand font-bold tracking-normal text-3xl leading-normal;
+    /* Desktop */
+    @apply md:text-4xl md:leading-normal;
+  }
+
+  .heading-md {
+    /* Mobile */
+    @apply font-brand font-bold tracking-normal text-3xl leading-normal;
+    /* Desktop */
+    @apply md:text-3xl md:leading-normal;
+  }
+
+  .heading-sm {
+    /* Mobile */
+    @apply font-brand font-bold tracking-normal text-2xl leading-normal;
+    /* Desktop */
+    @apply md:text-2xl md:leading-normal;
   }
 }
