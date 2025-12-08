@@ -37,8 +37,9 @@ export function Account() {
                 <Input id="tabs-demo-username" defaultValue="@peduarte" />
               </div>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="flex gap-1">
               <Button>Save changes</Button>
+              <Button variant="secondary">Cancel</Button>
             </CardFooter>
           </Card>
         </TabsContent>

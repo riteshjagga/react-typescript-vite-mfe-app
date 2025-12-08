@@ -1,5 +1,5 @@
+import { buttonVariants } from '@workspace/shared/components/ui/button'
 import { default as Button2 } from '../../components/Button/Button'
-import { Button, buttonVariants } from '@workspace/shared/components/ui/button'
 
 type CounterProps = {
   value: number

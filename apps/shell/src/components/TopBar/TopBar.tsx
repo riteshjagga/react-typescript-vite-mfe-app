@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import { cn } from '@workspace/shared/lib/utils'
 import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from 'lucide-react'
 
 // import { useIsMobile } from "@/hooks/use-mobile"
@@ -57,20 +56,19 @@ function ListItem({
   title,
   children,
   href,
-  className,
   ...props
 }: React.ComponentPropsWithoutRef<'li'> & { href: string }) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <a className={cn('ListItemLink', className)}>
+        {/*  <a className={cn('ListItemLink', className)}>
           <div className="text-sm leading-none font-medium">{title}</div>
           <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">{children}</p>
-        </a>
-        {/* <Link href={href}>
+        </a> */}
+        <Link href={href}>
           <div className="text-sm leading-none font-medium">{title}</div>
           <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">{children}</p>
-        </Link> */}
+        </Link>
       </NavigationMenuLink>
     </li>
   )

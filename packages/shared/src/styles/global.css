@@ -134,30 +134,9 @@
   --color-fuchsia-900: var(--color-magenta-s40);
   --color-fuchsia-950: var(--color-magenta-s50);
 
-  /**
-   * I think, these colors can be set to corresponding variables defined in :root and .dark and 
-   * then be removed from here.
-   * Colors for chart 1-5 and for light and dark colors have been directly refered in :root and .dark and commented here.
-   *
-   * For now, variables around brand background and foreground colors and for light and dark are being kept
-   * We'll see if these variables are required or not and then can be commented/removed if not required.
-   */
-  --color-brand-background-light: var(--color-magenta-s10);
-  --color-brand-background-dark: var(--color-magenta-t20);
-  --color-brand-background-light-2: var(--color-magenta-s20);
-  --color-brand-background-dark-2: var(--color-magenta-t30);
-  --color-brand-foreground-light: var(--color-magenta-s10);
-  --color-brand-foreground-dark: var(--color-magenta-t20);
-  /* --color-chart-1-light: var(--color-magenta-t10);
-  --color-chart-1-dark: var(--color-magenta-s10);
-  --color-chart-2-light: var(--color-blue-600);
-  --color-chart-2-dark: var(--color-blue-700);
-  --color-chart-3-light: var(--color-purple-400);
-  --color-chart-3-dark: var(--color-purple-600);
-  --color-chart-4-light: var(--color-magenta-t30);
-  --color-chart-4-dark: var(--color-magenta-t10);
-  --color-chart-5-light: var(--color-cyan-200);
-  --color-chart-5-dark: var(--color-cyan-400); */
+  --color-brand-background: var(--brand-background);
+  --color-brand-background-2: var(--brand-background-2);
+  --color-brand-foreground: var(--brand-foreground);
 
   --font-sans: 'Source Sans Pro', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -210,9 +189,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --brand: var(--color-brand-background-light);
-  --brand-background-2: var(--color-brand-background-light-2);
-  --brand-foreground: var(--color-brand-foreground-light);
+  --brand-background: var(--color-magenta-s10);
+  --brand-background-2: var(--color-magenta-s20);
+  --brand-foreground: var(--color-magenta-s10);
 }
 
 .dark {
@@ -253,9 +232,9 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.439 0 0);
-  --brand: var(--color-brand-background-dark);
-  --brand-background-2: var(--color-brand-background-dark-2);
-  --brand-foreground: var(--color-brand-foreground-dark);
+  --brand-background: var(--color-magenta-t20);
+  --brand-background-2: var(--color-magenta-t30);
+  --brand-foreground: var(--color-magenta-t20);
 }
 
 @layer base {

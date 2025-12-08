@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "main": "src/index.ts",
   "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
   "exports": {
     "./Button": "./src/comps/Button.tsx",
     "./global.css": "./src/styles/global.css",

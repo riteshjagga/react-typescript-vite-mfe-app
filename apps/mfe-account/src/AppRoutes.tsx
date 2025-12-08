@@ -1,5 +1,5 @@
 import { lazy } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 const Account = lazy(() => import('./modules/Account/Account'))
 const Dashboard = lazy(() => import('./modules/Dashboard/Dashboard'))
