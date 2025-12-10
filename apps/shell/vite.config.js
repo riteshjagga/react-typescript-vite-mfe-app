@@ -5,6 +5,7 @@ import checker from 'vite-plugin-checker'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  base: './',
   plugins: [react(), checker({ typescript: true }), tailwindcss()],
   resolve: {
     alias: {
