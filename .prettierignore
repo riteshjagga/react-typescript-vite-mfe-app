@@ -1,0 +1,5 @@
+# Lock files
+package-lock.json
+
+# VS Code workspace files
+*.code-workspace
