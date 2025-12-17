@@ -13,7 +13,7 @@ import { Label } from '@workspace/shared/components/ui/label'
 export default function Account() {
   return (
     <div>
-      <div className="p-4 text-lg">MFE - Account Page</div>
+      <div className="p-4 text-lg">Account MFE - Account Page</div>
       <Card>
         <CardHeader>
           <CardTitle>Account</CardTitle>

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import MfeAccount from '@workspace/mfe-account'
+import MfeUnderwriting from '@workspace/mfe-underwriting'
 import { ThemeProvider } from '@workspace/shared/components/ThemeProvider'
 import { Account } from './modules/Account/Account'
 import NavBar from './components/NavBar/NavBar'
@@ -22,11 +23,12 @@ const App = (): React.ReactElement => {
             <NavBar />
             <main>
               <Routes>
-                <Route path="/" element={<Navigate to="/mfe-account/account" replace />} />
-                <Route path="mfe-account/*" element={<MfeAccount />} />
-                <Route path="/account" element={<Account />} />
+                <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/account" element={<Account />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="mfe-account/*" element={<MfeAccount />} />
+                <Route path="mfe-underwriting/*" element={<MfeUnderwriting />} />
               </Routes>
             </main>
           </div>
