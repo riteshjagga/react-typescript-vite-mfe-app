@@ -101,7 +101,9 @@ async function signOut(): Promise<ApiResponse<boolean>> {
 async function verifyToken(token: string): Promise<ApiResponse<User>> {
   await delay(500)
 
+  console.log('Checking token:', token)
   if (!ACTIVE_TOKEN || ACTIVE_TOKEN.accessToken !== token || ACTIVE_TOKEN.expiresAt < Date.now()) {
+    console.log('Token check failed')
     return { error: 'Invalid or expired token' }
   }
 
