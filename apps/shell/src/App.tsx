@@ -6,7 +6,7 @@ import { AuthProvider } from './auth/AuthContext'
 
 import '@workspace/shared/global.css'
 import './App.css'
-import AppRoutes from './AppRoutes'
+import AppRoutes from './routes/AppRoutes'
 
 console.log(import.meta.env.VITE_ENV_NAME)
 
