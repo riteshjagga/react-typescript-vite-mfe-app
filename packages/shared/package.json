@@ -8,16 +8,13 @@
     "lint:fix": "eslint . --fix"
   },
   "exports": {
-    "./Button": "./src/comps/Button.tsx",
-    "./global.css": "./src/styles/global.css",
-    "./lib/*": "./src/lib/*.ts",
     "./components/*": [
       "./src/components/*.tsx",
       "./src/components/*.ts"
     ],
-    "./contexts/*": [
-      "./src/contexts/*/index.ts"
-    ]
+    "./contexts/*": "./src/contexts/*/index.ts",
+    "./lib/*": "./src/lib/*.ts",
+    "./global.css": "./src/styles/global.css"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.17",
