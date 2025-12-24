@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth, AuthApi } from '@workspace/shared/contexts/auth'
 import {
   Card,
   CardContent,
@@ -14,8 +15,6 @@ import { Label } from '@workspace/shared/components/ui/label'
 import { Alert, AlertDescription } from '@workspace/shared/components/ui/alert'
 import { Separator } from '@workspace/shared/components/ui/separator'
 import { Spinner } from '@workspace/shared/components/ui/spinner'
-import { AuthApi } from '../AuthApi'
-import { useAuth } from '../AuthContext'
 
 export function SignUp() {
   const [name, setName] = useState('')

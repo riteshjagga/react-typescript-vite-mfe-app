@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@workspace/shared/components/ui/dropdown-menu'
-import { Theme, useTheme } from '@workspace/shared/components/ThemeProvider'
+import { type Theme, useTheme } from '@workspace/shared/contexts/theme'
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme()

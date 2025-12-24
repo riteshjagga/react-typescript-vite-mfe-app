@@ -1,27 +1,23 @@
 import { Suspense } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
-import { ThemeProvider } from '@workspace/shared/components/ThemeProvider'
-import { AuthProvider } from './auth/AuthContext'
+import { AppProviders } from './AppProviders'
+import AppRoutes from './routes/AppRoutes'
 
 import '@workspace/shared/global.css'
 import './App.css'
-import AppRoutes from './AppRoutes'
 
 console.log(import.meta.env.VITE_ENV_NAME)
 
 const App = (): React.ReactElement => {
   return (
-    <AuthProvider>
-      <ThemeProvider>
-        <div className="m-4 p-4">
-          <h1>
-            React + Typescript + Vite + TailwindCSS + ShadCN + React Router + MonoRepo Template
-          </h1>
-          <BrowserRouter>
-            <Suspense fallback={<div>Loading...</div>}>
-              <AppRoutes />
-              {/* <Routes>
+    <AppProviders>
+      <div className="m-4 p-4">
+        <h1>React + Typescript + Vite + TailwindCSS + ShadCN + React Router + MonoRepo Template</h1>
+        <BrowserRouter>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AppRoutes />
+            {/* <Routes>
               <Route element={<PublicLayout />}>
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="/sign-up" element={<SignUp />} />
@@ -37,11 +33,10 @@ const App = (): React.ReactElement => {
                 <Route path="mfe-underwriting/*" element={<MfeUnderwriting />} />
               </Route>
             </Routes> */}
-            </Suspense>
-          </BrowserRouter>
-        </div>
-      </ThemeProvider>
-    </AuthProvider>
+          </Suspense>
+        </BrowserRouter>
+      </div>
+    </AppProviders>
   )
 }
 

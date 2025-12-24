@@ -1,31 +1,11 @@
-import { createContext, useContext, useState, useEffect } from 'react'
-import { AuthApi } from './AuthApi'
-
-interface AuthContextState {
-  isAuthenticated: boolean
-  isLoading: boolean
-  user: User | null
-  signIn: (credentials: SignInCredentials) => Promise<void>
-  signOut: () => void
-  establishSession: (token: string, user: User) => void
-}
+import { useEffect, useState } from 'react'
+import type { SignInCredentials, User } from './auth.types'
+import { AuthApi } from './auth.api'
+import { AuthContext } from './AuthContext'
 
 type AuthProviderProps = {
   children: React.ReactNode
 }
-
-interface User {
-  id: string
-  email: string
-  name: string
-}
-
-interface SignInCredentials {
-  email: string
-  password: string
-}
-
-const AuthContext = createContext<AuthContextState | undefined>(undefined)
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -123,12 +103,4 @@ export function AuthProvider({ children }: AuthProviderProps) {
       {children}
     </AuthContext>
   )
-}
-
-export function useAuth() {
-  const context = useContext(AuthContext)
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider')
-  }
-  return context
 }

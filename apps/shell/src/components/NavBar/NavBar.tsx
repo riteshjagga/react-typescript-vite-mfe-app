@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '@workspace/shared/contexts/auth'
 import { Button } from '@workspace/shared/components/ui/button'
 import { ModeToggle } from '../ModeToggle/ModeToggle'
-import { useAuth } from '../../auth/AuthContext'
 
 export default function NavBar() {
   const { signOut } = useAuth()
