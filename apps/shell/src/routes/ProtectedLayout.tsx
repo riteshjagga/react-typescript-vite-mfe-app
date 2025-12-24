@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom'
+import { useAuth } from '@workspace/shared/contexts/auth'
 import { Sidebar } from '../components/Sidebar/Sidebar'
 import NavBar from '../components/NavBar/NavBar'
-import { useAuth } from '../auth/AuthContext'
 
 export default function ProtectedLayout() {
   const { isAuthenticated } = useAuth()

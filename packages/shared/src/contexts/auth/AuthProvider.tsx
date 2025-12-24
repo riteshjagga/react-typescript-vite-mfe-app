@@ -1,29 +1,13 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
-import { AuthApi } from './AuthApi'
+import { useEffect, useState } from 'react'
+import type { SignInCredentials, User } from './auth.types'
+import { AuthApi } from './auth.api'
+import { AuthContext } from './AuthContext'
 
-interface AuthContextType {
-  isAuthenticated: boolean
-  isLoading: boolean
-  user: User | null
-  signIn: (credentials: SignInCredentials) => Promise<void>
-  signOut: () => void
-  establishSession: (token: string, user: User) => void
+type AuthProviderProps = {
+  children: React.ReactNode
 }
 
-interface User {
-  id: string
-  email: string
-  name: string
-}
-
-interface SignInCredentials {
-  email: string
-  password: string
-}
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined)
-
-export function AuthProvider({ children }: { children: ReactNode }) {
+export function AuthProvider({ children }: AuthProviderProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [user, setUser] = useState<User | null>(null)
@@ -115,18 +99,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <AuthContext.Provider
-      value={{ isAuthenticated, isLoading, user, signIn, signOut, establishSession }}
-    >
+    <AuthContext value={{ isAuthenticated, isLoading, user, signIn, signOut, establishSession }}>
       {children}
-    </AuthContext.Provider>
+    </AuthContext>
   )
-}
-
-export function useAuth() {
-  const context = useContext(AuthContext)
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider')
-  }
-  return context
 }

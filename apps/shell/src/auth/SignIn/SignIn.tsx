@@ -8,13 +8,13 @@ import {
   CardTitle,
 } from '@workspace/shared/components/ui/card'
 import { Button } from '@workspace/shared/components/ui/button'
-import { Spinner } from '@workspace/shared/components/ui/Spinner'
+import { Spinner } from '@workspace/shared/components/ui/spinner'
 import { Input } from '@workspace/shared/components/ui/input'
 import { Label } from '@workspace/shared/components/ui/label'
 import { Alert, AlertDescription } from '@workspace/shared/components/ui/alert'
 import { Separator } from '@workspace/shared/components/ui/separator'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../AuthContext'
+import { useAuth } from '@workspace/shared/contexts/auth'
 
 export function SignIn() {
   const [email, setEmail] = useState('')
